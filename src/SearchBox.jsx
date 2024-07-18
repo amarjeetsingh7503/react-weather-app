@@ -29,7 +29,7 @@ export default function SearchBox({ updateInfo }) {
                 visibility: jsonResponse.current.vis_km,
                 uvIndex: jsonResponse.current.uv
             };
-            console.log(result);
+            // console.log(result);
             return result;
         } catch (error) {
             console.error('Fetch error:', error);
@@ -43,7 +43,7 @@ export default function SearchBox({ updateInfo }) {
 
     async function formSubmit(event) {
         event.preventDefault();
-        console.log(city);
+        // console.log(city);
         setCity("");
         const info = await generateWeather();
         if (info) {
