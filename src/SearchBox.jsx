@@ -6,12 +6,10 @@ import { useState } from 'react';
 
 export default function SearchBox({ updateInfo }) {
     const [city, setCity] = useState("");
-    let REACT_APP_API_URL="https://api.weatherapi.com/v1/current.json"
-    let REACT_APP_API_KEY="f5b360ab883f464a9a891840241807"
     async function generateWeather() {
         try {
-            const response = await fetch(`${REACT_APP_API_URL}?q=${city}&key=${REACT_APP_API_KEY}`);
-            if (!response) {
+            const response = await fetch(`${import.meta.env.VITE_APP_API_URL}?q=${city}&key=${import.meta.env.VITE_APP_API_KEY}`);
+            if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const jsonResponse = await response.json();
