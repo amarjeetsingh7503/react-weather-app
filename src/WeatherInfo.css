@@ -1,0 +1,13 @@
+.weatherInfoBox{
+    text-align: center;
+}
+
+.weatherCard {
+    display: flex;
+    justify-content: center;
+}
+
+.cardInfo {
+    border: 2px solid black;
+    padding: 1rem;
+}
